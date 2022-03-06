@@ -1,12 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'semantic-ui-css/semantic.css';
 import './index.css';
-import App from './App';
+import App from './app/layout/App';
+import 'react-datepicker/dist/react-datepicker.css';
 import reportWebVitals from './reportWebVitals';
+import { store, StoreContext } from './app/stores/store';
+
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <StoreContext.Provider value = {store}>
+      <App />
+    </StoreContext.Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
